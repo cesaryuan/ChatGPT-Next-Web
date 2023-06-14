@@ -103,7 +103,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  user-select: none;
+  // user-select: none;
   touch-action: pan-x pan-y;
 
   @media only screen and (max-width: 600px) {
