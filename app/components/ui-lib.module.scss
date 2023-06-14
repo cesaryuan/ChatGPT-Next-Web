@@ -73,6 +73,7 @@
   background-color: var(--white);
   border-radius: 12px;
   width: 60vw;
+  max-width: 800px;
   animation: slide-in ease 0.3s;
 
   --modal-padding: 20px;
