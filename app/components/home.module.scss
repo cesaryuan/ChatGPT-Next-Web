@@ -363,7 +363,7 @@
 .chat-message-container {
   max-width: var(--message-max-width);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
 
   &:hover {
@@ -380,7 +380,8 @@
 }
 
 .chat-message-avatar {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .chat-message-status {
@@ -409,8 +410,8 @@
   font-size: 12px;
   position: absolute;
   right: 20px;
-  top: -26px;
-  left: 30px;
+  top: 0px;
+  // left: 30px;
   transition: all ease 0.3s;
   opacity: 0;
   pointer-events: none;

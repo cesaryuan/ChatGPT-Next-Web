@@ -794,7 +794,8 @@ export function Chat() {
             !isUser &&
             i > 0 &&
             !(message.preview || message.content.length === 0);
-          const showTyping = message.preview || message.streaming;
+          // const showTyping = message.preview || message.streaming;
+          const showTyping = false;
 
           const shouldShowClearContextDivider = i === clearContextIndex - 1;
 
@@ -807,13 +808,15 @@ export function Chat() {
                 }
               >
                 <div className={styles["chat-message-container"]}>
-                  <div className={styles["chat-message-avatar"]}>
-                    {message.role === "user" ? (
-                      <Avatar avatar={config.avatar} />
-                    ) : (
-                      <MaskAvatar mask={session.mask} />
-                    )}
-                  </div>
+                  {!isUser && (
+                    <div className={styles["chat-message-avatar"]}>
+                      {message.role === "user" ? (
+                        <Avatar avatar={config.avatar} />
+                      ) : (
+                        <MaskAvatar mask={session.mask} />
+                      )}
+                    </div>
+                  )}
                   {showTyping && (
                     <div className={styles["chat-message-status"]}>
                       {Locale.Chat.Typing}
@@ -870,13 +873,13 @@ export function Chat() {
                       defaultShow={i >= messages.length - 10}
                     />
                   </div>
-                  {!isUser && !message.preview && (
+                  {/* {!isUser && !message.preview && (
                     <div className={styles["chat-message-actions"]}>
                       <div className={styles["chat-message-action-date"]}>
                         {message.date.toLocaleString()}
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
               {shouldShowClearContextDivider && <ClearContextDivider />}
